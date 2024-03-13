@@ -8,7 +8,7 @@
             {
                 Console.Clear();
 
-                Console.WriteLine("Calculadora 2024");
+                Console.WriteLine("Calculadora 2024\n");
 
                 Console.WriteLine("Digite 1 para Adicionar");
                 Console.WriteLine("Digite 2 para Subtrair");
@@ -19,8 +19,16 @@
                 
                 string operacao = Console.ReadLine();
 
-                if (operacao == "S")
+                if (operacao == "S" || operacao == "s")
                     break;
+
+                if(operacao != "1" && operacao !="2" && operacao != "3" && operacao != "4" && operacao != "S" && operacao != "s")
+                {
+                    Console.WriteLine("Operacao invalida");
+                    Console.ReadLine();
+
+                    continue;
+                }
 
                 Console.WriteLine("Digite o primeiro número");
 
@@ -28,15 +36,15 @@
 
                 primeiroNumeroString = Console.ReadLine();
 
-                int primeiroNumero = Convert.ToInt32(primeiroNumeroString);                
+                double primeiroNumero = Convert.ToDouble(primeiroNumeroString);                
 
                 Console.WriteLine("Digite o segundo número");
 
                 string segundoNumeroString = Console.ReadLine();
 
-                int segundoNumero = Convert.ToInt32(segundoNumeroString);
+                double segundoNumero = Convert.ToDouble(segundoNumeroString);
 
-                int resultado = 0;
+                double resultado = 0;
 
                 if(operacao == "1")
                 {
@@ -55,15 +63,12 @@
 
                 else if (operacao == "4")
                 {
-                    if (segundoNumero == 0)
+                    while (segundoNumero == 0)
                     {
-                       while (segundoNumero == 0)
-                        {
-                            Console.WriteLine("Digite um número maior do que zero");
-                            Console.ReadLine();  
-                            segundoNumero =  Console.ReadLine();
-                        }
-                    }                   
+                        Console.WriteLine("Digite um numero maior que zero");
+                        segundoNumero = Convert.ToDouble(Console.ReadLine());
+                    }
+                    resultado = primeiroNumero / segundoNumero;          
 
                 }
 
