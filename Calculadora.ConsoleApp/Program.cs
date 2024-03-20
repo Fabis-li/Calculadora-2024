@@ -6,6 +6,24 @@
         {
             while (true)
             {
+                string opcao = MostrarMenu();
+
+                if (OpcaoSaidaSelecionada(opcao))
+                    break;
+
+                else if(OpcaoInvalida(opcao))
+                {
+                    ExibirMensagemErro();
+                    continue;
+                }
+                else
+                {
+                    RealizarCalculo(opcao);
+                }                     
+            }
+
+            static string MostrarMenu()
+            {
                 Console.Clear();
 
                 Console.WriteLine("Calculadora 2024\n");
@@ -16,67 +34,81 @@
                 Console.WriteLine("Digite 4 para Dividir");
 
                 Console.WriteLine("Digite S para sair");
-                
+
                 string operacao = Console.ReadLine();
 
-                if (operacao == "S" || operacao == "s")
-                    break;
+                return operacao;
+            }
 
-                if(operacao != "1" && operacao !="2" && operacao != "3" && operacao != "4" && operacao != "S" && operacao != "s")
-                {
-                    Console.WriteLine("Operacao invalida");
-                    Console.ReadLine();
+            static bool OpcaoSaidaSelecionada(string  opcao)
+            {
+                bool opcaoSaidaSelecionada = opcao == "S" || opcao == "s";
 
-                    continue;
-                }
+                return opcaoSaidaSelecionada;
+            }
 
-                Console.WriteLine("Digite o primeiro número");
+            static bool OpcaoInvalida(string opcao)
+            {
+                bool opcaoInvalida = opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "S" && opcao != "s";
 
-                string primeiroNumeroString = "";
+                return opcaoInvalida;
+            }
 
-                primeiroNumeroString = Console.ReadLine();
+            static void ExibirMensagemErro()
+            {
+                Console.WriteLine("Operacao invalida");
+                Console.ReadLine();
+            }           
 
-                double primeiroNumero = Convert.ToDouble(primeiroNumeroString);                
+            static void RealizarCalculo(String opcao)
+            {             
 
-                Console.WriteLine("Digite o segundo número");
+                double primeiroNumero = ObterNumeroDouble("Digite o primeiro número:");
 
-                string segundoNumeroString = Console.ReadLine();
-
-                double segundoNumero = Convert.ToDouble(segundoNumeroString);
+                double segundoNumero = ObterNumeroDouble("Digite o segundo número:");
 
                 double resultado = 0;
 
-                if(operacao == "1")
+                switch (opcao)
                 {
-                    resultado = primeiroNumero + segundoNumero;
+                    case "1":
+                        resultado = primeiroNumero + segundoNumero;
+                        break;
+
+                    case "2":
+                        resultado = primeiroNumero - segundoNumero;
+                        break;
+
+                    case "3":
+                        resultado = primeiroNumero * segundoNumero;
+                        break;
+
+                    case "4":
+                        while (segundoNumero == 0)
+                        {
+                            Console.WriteLine("Digite um numero maior que zero");
+                            segundoNumero = Convert.ToDouble(Console.ReadLine());
+                        }
+                        resultado = primeiroNumero / segundoNumero;
+                        break;
                 }
-
-                else if (operacao == "2")
-                {
-                    resultado = primeiroNumero - segundoNumero;
-                }
-
-                else if (operacao == "3")
-                {
-                    resultado = primeiroNumero * segundoNumero;
-                }
-
-                else if (operacao == "4")
-                {
-                    while (segundoNumero == 0)
-                    {
-                        Console.WriteLine("Digite um numero maior que zero");
-                        segundoNumero = Convert.ToDouble(Console.ReadLine());
-                    }
-                    resultado = primeiroNumero / segundoNumero;          
-
-                }
-
-                Console.WriteLine("O resultado é: " + resultado);
-
-                Console.ReadLine();               
+                ExibirResultado(resultado);
             }
 
+            static double ObterNumeroDouble(string texto)
+            {
+                Console.WriteLine(texto);
+                double numeroDigitado = Convert.ToDouble(Console.ReadLine());
+
+                return numeroDigitado;
+            }
+
+            static void ExibirResultado(double resultado)
+            {
+                Console.WriteLine("O resultado é: " + resultado);
+
+                Console.ReadLine();
+            }
         }
     }
 }
