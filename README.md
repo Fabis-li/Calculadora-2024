@@ -2,23 +2,23 @@
 
 ## Funcionalidades
 
-- **Operações Básicas**: Realize somas, subtrações, multiplicações e divisões com facilidade.
-- **Suporte a Decimais**: Trabalhe com números que tém até duas casas decimais.
-- **Validação de Entrada**: A calculadora garanete que apenas opções válidas sejam aceitas.
-- **Tratamento de Divisão por Zero**: A calculadora é capaz de validadr eros de divisão por zero.
+- **OperaÃ§Ãµes BÃ¡sicas**: Realize somas, subtraÃ§Ãµes, multiplicaÃ§Ãµes e divisÃµes com facilidade.
+- **Suporte a Decimais**: Trabalhe com nÃºmeros que tÃ©m atÃ© duas casas decimais.
+- **ValidaÃ§Ã£o de Entrada**: A calculadora garanete que apenas opÃ§Ãµes vÃ¡lidas sejam aceitas.
+- **Tratamento de DivisÃ£o por Zero**: A calculadora Ã© capaz de validadr eros de divisÃ£o por zero.
 
 ---
 
 ## Como usar
 
-1. Clone o repositório ou baixe o código fonte da calculadora.
-2. Abara o terminal ou prompt de comando e navegue até a pasta raiz da calculadora.
-3. Utilize o comando abaixo para restauraras dependências do projeto.
+1. Clone o repositÃ³rio ou baixe o cÃ³digo fonte da calculadora.
+2. Abara o terminal ou prompt de comando e navegue atÃ© a pasta raiz da calculadora.
+3. Utilize o comando abaixo para restauraras dependÃªncias do projeto.
 ```
 dotnet restore
 ```
 
-4. Em seguinda, compile a solução utilizando o comando:
+4. Em seguinda, compile a soluÃ§Ã£o utilizando o comando:
 ```
 dotnetbuild --configuration Release
 ```
@@ -28,8 +28,8 @@ dotnetbuild --configuration Release
 dotnet run --project Calculadora.ConsoleApp
 ```
 
-6. Para executar o arquivo compilado, navegue ate a pasta `./Claculadora.ConsoleApp/bin/Release/net8.0/` e execute os arquivos.
+6. Para executar o arquivo compilado, navegue ate a pasta `./Calculadora.ConsoleApp/bin/Release/net8.0/` e execute os arquivos.
 
 ## Requesitos 
 
-- .NET SDK (recomendado .NET 5.0 ou superior) para compilação e execução do projeto.
+- .NET SDK (recomendado .NET 5.0 ou superior) para compilaÃ§Ã£o e execuÃ§Ã£o do projeto.
