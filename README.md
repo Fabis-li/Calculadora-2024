@@ -20,7 +20,7 @@ dotnet restore
 
 4. Em seguinda, compile a solução utilizando o comando:
 ```
-dotnetbuild --configuration Release
+dotnet build --configuration Release
 ```
 
 5. Para executar o projeto compilado em tempo real
