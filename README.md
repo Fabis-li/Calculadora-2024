@@ -4,7 +4,7 @@
 
 - **Operações Básicas**: Realize somas, subtrações, multiplicações e divisões com facilidade.
 - **Suporte a Decimais**: Trabalhe com números que tém até duas casas decimais.
-- **Validação de Entrada**: A calculadora garanete que apenas opções válidas sejam aceitas.
+- **Validação de Entrada**: A calculadora garante que apenas opções válidas sejam aceitas.
 - **Tratamento de Divisão por Zero**: A calculadora é capaz de validadr eros de divisão por zero.
 
 ---
